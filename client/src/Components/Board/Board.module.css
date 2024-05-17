@@ -1,0 +1,45 @@
+.board .tiles {
+  display: grid;
+  grid-template-columns: repeat(8, var(--tile-size));
+  grid-template-rows: repeat(8, var(--tile-size));
+  width: calc(8 * var(--tile-size));
+}
+.board .tiles {
+  border-radius: 6px;
+  overflow: hidden;
+}
+.board .tiles .blackTl {
+  background-color: var(--dark-tile);
+}
+.board .tiles .whiteTl {
+  background-color: var(--light-tile);
+}
+.board {
+  position: relative;
+}
+.board .ranks {
+  display: grid;
+  font-size: 20px;
+  position: absolute;
+  left: 1%;
+  top: 1%;
+  user-select: none;
+  pointer-events: none;
+}
+.board .ranks span {
+  margin-bottom: 78px;
+  font-weight: 600;
+}
+.board .files {
+  display: flex;
+  font-size: 20px;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  user-select: none;
+  pointer-events: none;
+}
+.board .files span {
+  margin-left: 89px;
+  font-weight: 600;
+}

@@ -1,0 +1,1 @@
+export const UseToChar = file => String.fromCharCode(file+96)
