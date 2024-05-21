@@ -1,10 +1,17 @@
-import React from 'react'
-import { AppContext } from './Contexts/Context' // Adjust the import path as needed
-import Board from './Components/Board/Board' // Assuming you have a Board component
-
+import React, { useReducer } from "react";
+import { AppContext } from "./Contexts/Context"; 
+import Board from "./Components/Board/Board";
+import { Reducer } from "./Reducer/Reducer";
+import { initGameState } from "./Constant";
 function App() {
+  const [appState, dispatch] = useReducer(Reducer, initGameState);
+
+  const providerState = {
+    appState,
+    dispatch,
+  };
   return (
-    <AppContext.Provider value={{}}>
+    <AppContext.Provider value={providerState}>
       <div className="game">
         <Board />
       </div>
